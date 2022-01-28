@@ -24,7 +24,21 @@
         </div>
 
         <div class="container__form">
-
+            <form  action="">
+                <h2>Llene el formulario</h2>
+                    <label for="txt_name">Name</label>
+                    <input type="text" name="txt_name" id="name">
+                    <label for="txt_email">Email</label>
+                    <input type="email" name="email" id="txt_email">
+                    <label for="txt_date">Date</label>
+                    <input type="datetime-local" name="txt_date" id="date">
+                    <label for="cmb_date">Tipo Cita</label>
+                    <select name="date_option" id="cmb_date">
+                        <option value="consulta">Consulta</option>
+                        <option value="rembolso">Rembolso</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+            </form>
         </div>
     </section>
 </body>
