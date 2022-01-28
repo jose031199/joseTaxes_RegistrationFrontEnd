@@ -12,8 +12,12 @@
     height: 100vh;
 }
 
+/*Styling background*/
 .container__background{
     background:url('/img/person_taxes.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 100% 100%;
     display: flex;
     flex-direction:column;
     align-items:center;
@@ -22,8 +26,11 @@
 
 .container__background h1,p,ul{
     color: white;
+    text-transform: uppercase;
 }
 
+
+/*Styling form*/
 .container__form{
     background-color:#00FA9A;
 }
