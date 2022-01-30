@@ -25,19 +25,41 @@
 
         <div class="container__form">
             <form  action="">
-                <h2>Llene el formulario</h2>
-                    <label for="txt_name">Name</label>
-                    <input type="text" name="txt_name" id="name">
-                    <label for="txt_email">Email</label>
-                    <input type="email" name="email" id="txt_email">
-                    <label for="txt_date">Date</label>
+                <h2>Registro Cita</h2>
+                <div>
+                    <label for="txt_name">Nombre</label>
+                    <input type="text" name="txt_name" id="name" placeholder="Jose Luis">
+                </div>
+                <label for="txt_lastname">Apellido</label>
+                <input type="text" name="txt_name" id="name" placeholder="Rios">
+                <div>
+
+                </div>
+                <div>
+                    <label for="txt_email">Correo Electrónico</label>
+                    <input type="email" name="email" id="txt_email" placeholder="example@gmail.com">
+                </div>
+
+                <div>
+                    <label for="txt_date">Fecha</label>
                     <input type="datetime-local" name="txt_date" id="date">
+                </div>
+
+                <div>
                     <label for="cmb_date">Tipo Cita</label>
                     <select name="date_option" id="cmb_date">
                         <option value="consulta">Consulta</option>
                         <option value="rembolso">Rembolso</option>
                     </select>
-                    <input type="submit" value="Enviar">
+                </div>
+
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Enviar
+                    </a>
             </form>
         </div>
     </section>
