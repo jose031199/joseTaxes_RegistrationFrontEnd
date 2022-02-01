@@ -1,4 +1,4 @@
-*{
+*,*::before,*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,22 +28,23 @@
     color: white;
     text-transform: uppercase;
     text-align: center;
+    margin: 0 10%;
 }
 
 .container__background h1{
     font-family: 'Sedgwick Ave', cursive;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .container__background p{
     font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight:400;
 }
 
 .container__background ul li{
     margin-top:40px;
-    font-size:1.8rem;
+    font-size:1.5rem;
     font-weight:bold;
 }
 
@@ -57,13 +58,15 @@
 .form__register{
     margin: 0 auto;
     width:450px;
-    padding:50px;
+    height:650px;
+    padding:0 25px;
+    /*padding:50px;*/
     border-radius:15px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow:0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-.form__register input[type="text"],[type="email"],[type="datetime-local"],[type="datetime-local-"]{
+.form__register input[type="text"],[type="email"],[type="datetime-local"]{
     padding:5px 30px;
     background: transparent;
     margin:5%;
@@ -71,6 +74,7 @@
     border-bottom: 1px solid #fff;
     color: white;
     font-size:1rem;
+    display:block;
 }
 
 .form__register select {
@@ -79,6 +83,8 @@
     margin:5%;
     color: white;
     font-size:1rem;
+    border: none;
+    display: block;
 }
 
 .form__register select option{
@@ -206,6 +212,77 @@
 }
 
 
+/*Resize Tablet */
+@media(max-width:950px){
+    .form__register{
+        width:320px;
+        height:550px;
+        /*padding: 20px;*/
+    }
+
+    .form__register input[type="text"],[type="email"],[type="datetime-local"]{
+        padding:3px 15px;
+        font-size: 0.8rem;
+    }
 
 
+    .form__register select{
+        padding:5px 10px;
+        font-size: 0.8rem;
+    }
 
+    .form__register a{
+        margin-top:20px;
+        font-size: 1.2rem;
+    }
+
+    .container__background h1{
+        font-size:1.9rem;
+    }
+
+    .container__background p{
+        font-size:1.5rem;
+    }
+
+    .container__background ul li{
+        font-size: 1.3rem;
+    }
+}
+
+/*Resize phone*/
+@media(max-width:700px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .form__register{
+        margin:2% auto;
+        width:280px;
+        height:450px;
+    }
+
+    .form__register label{
+        font-size:0.9rem;
+    }
+
+    .form__register h2{
+        font-size:1.1rem;
+    }
+
+    .form__register a{
+        margin-top:5px;
+        font-size: 0.9rem;
+    }
+
+    .container__background h1{
+        font-size:1.3rem;
+    }
+
+    .container__background p{
+        font-size:1rem;
+    }
+
+    .container__background ul li{
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+}
