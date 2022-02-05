@@ -57,17 +57,18 @@
 }
 .form__register{
     margin: 0 auto;
-    width:450px;
-    padding:25px;
+    width:410px;
+    height: 550px;
+    padding:25px 5px;
     border-radius:15px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow:0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
 .form__register input[type="text"],[type="email"],[type="datetime-local"]{
-    padding:5px 30px;
+    padding:5px 20px;
     background: transparent;
-    margin:5%;
+    margin:2%;
     border: none;
     border-bottom: 1px solid #fff;
     color: white;
@@ -78,7 +79,7 @@
 .form__register select {
     padding:8px 20px;
     background: transparent;
-    margin:5%;
+    margin:2%;
     color: white;
     font-size:1rem;
     border: none;
@@ -91,7 +92,7 @@
 
 .form__register label{
     color:#fff;
-    font-size:1.3rem;
+    font-size:1.1rem;
     font-style: bold;
     position:relative;
     top: 8px;
@@ -104,17 +105,21 @@
     text-align: center;
 }
 
+.form__register div{
+    margin-left:15px;
+}
+
 .form__register a{
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'PT Sans Narrow', sans-serif;
     position: relative;
     display:inline-block;
-    padding: 10px 25px;
+    padding: 8px 25px;
     color:#48fb47;
-    font-size: 1.5rem;
-    margin-top:35px;
+    font-size: 1.3rem;
     letter-spacing:5px;
+    margin-left: 10px;
     transition: 0.5s ease-in-out;
     overflow: hidden;
 }
@@ -213,8 +218,8 @@
 /*Resize Tablet */
 @media(max-width:950px){
     .form__register{
-        width:320px;
-        padding: 20px;
+        width:340px;
+        height:520px;
     }
 
     .form__register input[type="text"],[type="email"],[type="datetime-local"]{
@@ -233,6 +238,9 @@
         font-size: 1.2rem;
     }
 
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
     .container__background h1{
         font-size:1.9rem;
     }
@@ -250,12 +258,13 @@
 @media(max-width:700px){
     .form__register{
         margin:0 auto;
-        width:280px;
+        width:260px;
+        height:375px;
         padding:10px;
     }
 
     .form__register label{
-        font-size:0.9rem;
+        font-size:0.8rem;
     }
 
     .form__register h2{
@@ -267,12 +276,8 @@
         font-size: 0.9rem;
     }
 
-    .container{
-        grid-template-columns: repeat(1,1fr);
-    }
-
     .container__form{
-        align-items:flex-start;
+        align-items:center;
         padding-top:3%;
     }
     .container__background h1{
