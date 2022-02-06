@@ -1,3 +1,7 @@
+:root{
+    --red:rgba(184, 18, 18, 0.863);
+}
+
 *,*::before,*::after{
     margin: 0;
     padding: 0;
