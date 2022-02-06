@@ -1,5 +1,5 @@
 export default class Registro{
-    constructor(name){
+    constructor(name,lastname,phone,email,dateRegister,typeOfRegister){
         this.name = name;
         this.lastname = lastname;
         this.phone = phone;
@@ -10,6 +10,6 @@ export default class Registro{
 }
 
 export function ShowInfo(registro){
-    console.log(`Nombre ${registro.name} \n Apellido ${registro.lastname}`);
+    return `<b>Nombre</b> ${registro.name} \n <b>Apellido</b> ${registro.lastname} \n <b>Phone</b> ${registro.phone} \n <b>Email</b> ${registro.email}`;
 }
 
