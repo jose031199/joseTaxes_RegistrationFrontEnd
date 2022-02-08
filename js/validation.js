@@ -1,5 +1,5 @@
 import Registro,{ShowInfo} from './person.js';
-const person = {
+const person = { //Create object then insert in class Person.js
     name : '',
     lastname: '',
     phone:0,
@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded',function(){
 
     //Validate form
     ValidateForm();
-
-
     //If form is complete button will work
     SubmitForm();
 })
 
-function Register_names(evt){//Function to get name of user
+function Register_names(evt){//Function to validate name and lastname
     const user_names = evt.target.value.trim();
     const regular_expression = /^[a-zA-Z\s]*$/;
         if(user_names.length <4 || user_names === '' || !regular_expression.test(user_names)){
@@ -33,7 +31,7 @@ function Register_names(evt){//Function to get name of user
         }
 }
 
-function Register_phone(evt){
+function Register_phone(evt){ //Function to validate phone number
     const phone = evt.target.value;
     const regular_expression = /[^0-9]/g
     
@@ -45,7 +43,7 @@ function Register_phone(evt){
     }
 }
 
-function Register_email(evt){
+function Register_email(evt){ // Function to validate email
     const email = evt.target.value.trim();
     const regular_expression = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/
 
@@ -73,13 +71,14 @@ function ValidateForm() {//Function to ValidateUser
     input_tipoCita.addEventListener('change',(e)=>{person.TypeRegister = e.target.value});
 }
 
-function SubmitForm(){
-    const btn_send = document.getElementById('btn_send');
+function SubmitForm(){ //Function to send form to backend server
+    const formulario = document.getElementById('register_form');
     let empty_form =false;
     var user_register = null;
     //Event when we click button
-    if(btn_send){
-        btn_send.addEventListener('click',(e)=>{
+
+    if(formulario){// If exist form
+        formulario.addEventListener('submit',(e)=>{  // If we submit the form
             e.preventDefault();
             Object.keys(person).forEach(function(key){
                 if(person[key]===''){ //If some property is empty
@@ -87,7 +86,7 @@ function SubmitForm(){
                 }
             });
 
-            if(empty_form === true){
+            if(empty_form === true){ // If some is empty itll display an error
                 Swal.fire({
                     icon: 'error',
                     title: 'Envio Rechazado',
@@ -98,19 +97,29 @@ function SubmitForm(){
                 empty_form = false;
             }else{
                 user_register = new Registro(person.name,person.lastname,person.phone,person.email,person.taxesDate,person.TypeRegister);
-                Swal.fire({
+                Swal.fire({ //Display correct message
                     icon: 'success',
                     title: 'Envio Exitoso',
                     html:ShowInfo(user_register),
                     showConfirmButton: false,
                     timer:3500
                 });
-                setTimeout(()=>{
+                
+                var datos = new FormData(formulario);
+                //Fetch data
+                fetch('./php/connectionDB.php',{
+                    method: 'POST',
+                    body: datos
+                }).then(res => res.json())
+                .then(data=>{
+                    console.log(data);
+                });
+
+                /*setTimeout(()=>{
                     location.reload();
-                },5000);
+                },5000);*/
             }
         });
-
     }
 }
 
