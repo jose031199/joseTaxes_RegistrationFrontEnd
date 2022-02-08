@@ -10,13 +10,7 @@ export default class Registro{
 }
 
 export function ShowInfo(registro){
-    ConvertJson(registro)
     return `<b>Nombre</b> ${registro.name} <br> <b>Apellido</b> ${registro.lastname} <br> <b>Phone</b> ${registro.phone} 
     <br> <b>Email</b> ${registro.email} <br> <b>Fecha</b> ${registro.dateRegister}<br> <b>Tipo de Cita</b> ${registro.typeOfRegister}`;
-}
-
-function ConvertJson(registro){
-    var registro_json = JSON.stringify(registro); 
-    console.log(registro_json);
 }
 
