@@ -63,11 +63,12 @@ function ValidateForm() {//Function to ValidateUser
     const input_fecha = document.getElementById('date_input');
     const input_tipoCita = document.getElementById('cmb_date');
 
+
     input_name.addEventListener('input',Register_names);
     input_lastname.addEventListener('input',Register_names);
     input_phone.addEventListener('input',Register_phone);
     input_email.addEventListener('input',Register_email);
-    input_fecha.addEventListener('change',(e)=>{person.taxesDate=e.target.value});
+    input_fecha.addEventListener('change',(e)=>{person.taxesDate = e.target.value });
     input_tipoCita.addEventListener('change',(e)=>{person.TypeRegister = e.target.value});
 }
 
@@ -104,7 +105,7 @@ function SubmitForm(){ //Function to send form to backend server
                     showConfirmButton: false,
                     timer:3500
                 });
-                
+
                 var datos = new FormData(formulario);
                 //Fetch data
                 fetch('./php/connectionDB.php',{
@@ -115,9 +116,9 @@ function SubmitForm(){ //Function to send form to backend server
                     console.log(data);
                 });
 
-                /*setTimeout(()=>{
+            /* setTimeout(()=>{
                     location.reload();
-                },5000);*/
+                },7000);*/
             }
         });
     }
